@@ -13,6 +13,23 @@ public:
 
 	const void reset();
 };
+int main(){
+	char restart;
+	TicTacToe game;
+	game.Move();
+	game.over();
+	game.Print();
+	std::cout << "Do you want to play again? Enter (y/n): ";
+	std::cin >> restart;
+	if (restart == 'y')
+	{
+		std::cout << "\n\n\n";
+		game.Print();
+	}
+	else if (restart == 'n')
+		return 0;
+}
+
 int TicTacToe::Move(){
 	int	i, choice;
 	int player = 1;
@@ -91,7 +108,7 @@ return 0;
 int TicTacToe::over()
 {
 	if (square[1] == square[2] && square[2] == square[3]) // these are the checks for all possible win solutions
-
+		 
 		return 1;
 	else if (square[4] == square[5] && square[5] == square[6])
 
@@ -121,4 +138,27 @@ int TicTacToe::over()
 		return 0;
 	else
 		return -1;
+}
+void Print()
+{
+	system("cls");
+	cout << "\n\n\tTic Tac Toe\n\n";
+
+	cout << "Player 1 (X)  -  Player 2 (O)" << endl << endl;
+	cout << endl;
+
+	cout << "     |     |     " << endl;
+	cout << "  " << square[1] << "  |  " << square[2] << "  |  " << square[3] << endl;
+
+	cout << "_____|_____|_____" << endl;
+	cout << "     |     |     " << endl;
+
+	cout << "  " << square[4] << "  |  " << square[5] << "  |  " << square[6] << endl;
+
+	cout << "_____|_____|_____" << endl;
+	cout << "     |     |     " << endl;
+
+	cout << "  " << square[7] << "  |  " << square[8] << "  |  " << square[9] << endl;
+
+	cout << "     |     |     " << endl << endl;
 }
