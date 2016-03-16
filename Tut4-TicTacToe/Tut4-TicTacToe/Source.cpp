@@ -141,7 +141,7 @@ int TicTacToe::over()
 }
 void Print()
 {
-	system("cls");
+	cin.get();
 	cout << "\n\n\tTic Tac Toe\n\n";
 
 	cout << "Player 1 (X)  -  Player 2 (O)" << endl << endl;
@@ -161,4 +161,13 @@ void Print()
 	cout << "  " << square[7] << "  |  " << square[8] << "  |  " << square[9] << endl;
 
 	cout << "     |     |     " << endl << endl;
+}
+void reset()
+{
+	int values = 1; // Row  1,col 1.. has value 0
+	for (int i = 1; i <= 10; i++)
+	{
+		square[i] = values;
+		values += 1;
+	}
 }
